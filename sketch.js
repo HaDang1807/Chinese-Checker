@@ -77,7 +77,7 @@ function windowResized() {
 function updateShow(){
   radius = min(width, height) / 36;
   offsetX = width / 2 - 4 * radius * 2;
-  offsetY = height / 2 - 4 * radius * sqrt3;
+	offsetY = height / 2 - 4 * radius * sqrt3;
 }
 
 // Populate the grid with tiles
@@ -341,6 +341,10 @@ class Tile {
 		return this.y * 1 * radius * sqrt3 + offsetY;
 	}
 
+  // get showY() {
+  //   return this.y * radius* 2* Math.sqrt(3) / 2 + offsetY; // 4*radius*sin(2*PI/6)
+  // }
+
   show() {
     fill(200);
     // stroke('white');
@@ -348,8 +352,8 @@ class Tile {
 
     // If tile has color
     if (this.msg != '') { // && this != currentTile
-	drawPiece(this.showX, this.showY, this.piece, this.msg);
-    }
+			drawPiece(this.showX, this.showY, this.piece, this.msg);
+		}
   }
 
   // Get adjacent tiles of a tile
